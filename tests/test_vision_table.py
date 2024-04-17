@@ -1,4 +1,3 @@
-from openai import OpenAI
 from io import StringIO
 from typing import Annotated, Any, List
 from pydantic import (
@@ -64,7 +63,6 @@ urls = [
 @pytest.mark.asyncio_cooperative
 @pytest.mark.parametrize("client, url", product(clients, urls))
 async def test_extract(client: AsyncInstructor, url: str):
-
     if client.kwargs["model"] != "gpt-4-turbo":
         pytest.skip("Only OpenAI supported for now, we need to support images for both")
 
