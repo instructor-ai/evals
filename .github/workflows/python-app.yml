@@ -29,6 +29,7 @@ jobs:
         uv pip install -r requirements.txt
     - name: Test with pytest
       run: |
+        source .venv/bin/activate
         pytest
       env:
           OPENAI_API_KEY: ${{ vars.OPENAI_API_KEY }}
