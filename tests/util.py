@@ -2,6 +2,7 @@ from openai import AsyncOpenAI
 from anthropic import AsyncAnthropic
 import instructor
 from enum import Enum
+import os
 
 
 class Models(str, Enum):
@@ -14,25 +15,25 @@ class Models(str, Enum):
 
 clients = (
     instructor.from_openai(
-        AsyncOpenAI(),
+        AsyncOpenAI(api_key=os.environ.get("OPENAI_API_KEY")),
         model=Models.GPT35TURBO,
     ),
     instructor.from_openai(
-        AsyncOpenAI(),
+        AsyncOpenAI(api_key=os.environ.get("OPENAI_API_KEY")),
         model=Models.GPT4TURBO,
     ),
     instructor.from_anthropic(
-        AsyncAnthropic(),
+        AsyncAnthropic(api_key=os.environ.get("ANTHROPIC_API_KEY")),
         model=Models.CLAUDE3_OPUS,
         max_tokens=4000,
     ),
     instructor.from_anthropic(
-        AsyncAnthropic(),
+        AsyncAnthropic(api_key=os.environ.get("ANTHROPIC_API_KEY")),
         model=Models.CLAUDE3_SONNET,
         max_tokens=4000,
     ),
     instructor.from_anthropic(
-        AsyncAnthropic(),
+        AsyncAnthropic(api_key=os.environ.get("ANTHROPIC_API_KEY")),
         model=Models.CLAUDE3_HAIKU,
         max_tokens=4000,
     ),
