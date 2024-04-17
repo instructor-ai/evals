@@ -9,5 +9,9 @@ pip install -r requirements.txt
 pytest 
 ```
 
+## Contributions
+
 When contributing just make sure everything is as async and we'll handle the rest!
 
+
+We could use contributions for almost everything from the examples page! https://useinstructor.com/examples/ 
