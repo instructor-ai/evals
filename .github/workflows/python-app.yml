@@ -24,6 +24,7 @@ jobs:
     - uses: yezz123/setup-uv@v4
     - name: Install dependencies
       run: |
+        uv venv
         uv pip install pytest
         uv pip install -r requirements.txt
     - name: Test with pytest
