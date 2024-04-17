@@ -30,5 +30,5 @@ jobs:
       run: |
         pytest
       env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ vars.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ vars.ANTHROPIC_API_KEY }}
