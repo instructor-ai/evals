@@ -28,7 +28,7 @@ data = [
         ("DANNY", 125),
     ),
     (
-        "Extract `DONALD is a 45`",
+        "Extract `DONALD is a 45 year old man`",
         ("DONALD", 45),
     ),
 ]
