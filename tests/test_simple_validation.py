@@ -4,7 +4,7 @@ from typing import Annotated
 
 from openai import OpenAI
 from pydantic import BaseModel, BeforeValidator, ValidationError
-
+from langsmith import unit
 import instructor
 from instructor import llm_validator
 from util import clients
@@ -36,6 +36,11 @@ data = [
 @pytest.mark.asyncio_cooperative
 @pytest.mark.parametrize("client, data", product(clients, data))
 async def test_simple_validation(client, data):
+    await check_simple_validation(client, data)
+
+
+@unit
+async def check_simple_validation(client, data):
     question, context = data
 
     with pytest.raises(ValidationError):
@@ -53,3 +58,4 @@ async def test_simple_validation(client, data):
             response_model=QuestionAnswerNoEvil,
             max_retries=0,
         )
+        return resp
