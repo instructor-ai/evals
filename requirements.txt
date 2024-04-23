@@ -23,7 +23,7 @@ idna==3.7
 iniconfig==2.0.0
 inline-snapshot==0.8.0
 instructor==1.2.0
-langsmith==0.1.48
+langsmith>=0.1.50,<0.2
 markdown-it-py==3.0.0
 mdurl==0.1.2
 multidict==6.0.5

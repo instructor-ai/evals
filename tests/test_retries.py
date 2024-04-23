@@ -3,6 +3,7 @@ from itertools import product
 from pydantic import AfterValidator, BaseModel, Field
 from typing import Annotated
 from util import clients
+from langsmith import unit
 
 
 def uppercase_validator(v):
@@ -37,6 +38,10 @@ data = [
 @pytest.mark.asyncio_cooperative
 @pytest.mark.parametrize("client, data", product(clients, data))
 async def test_retries(client, data):
+    await check_retries(client, data)
+
+@unit
+async def check_retries(client, data):
     query, expected = data
     response = await client.create(
         response_model=UserDetail,
