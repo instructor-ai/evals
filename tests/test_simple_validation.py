@@ -39,7 +39,7 @@ async def test_simple_validation(client, data):
     question, context = data
 
     with pytest.raises(ValidationError):
-        resp = await client.create(
+        await client.create(
             messages=[
                 {
                     "role": "system",
