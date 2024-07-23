@@ -12,6 +12,7 @@ import pytest
 from itertools import product
 from util import clients
 from instructor import AsyncInstructor
+from langsmith import unit
 
 
 def md_to_df(data: Any) -> Any:
@@ -63,6 +64,11 @@ urls = [
 @pytest.mark.asyncio_cooperative
 @pytest.mark.parametrize("client, url", product(clients, urls))
 async def test_extract(client: AsyncInstructor, url: str):
+    await check_extract(client, url)
+
+
+@unit
+async def check_extract(client: AsyncInstructor, url: str):
     if client.kwargs["model"] != "gpt-4-turbo":
         pytest.skip("Only OpenAI supported for now, we need to support images for both")
 

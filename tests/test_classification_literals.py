@@ -4,6 +4,7 @@ from util import clients
 from pydantic import BaseModel
 
 import pytest
+from langsmith import unit
 
 
 class ClassifySpam(BaseModel):
@@ -19,6 +20,11 @@ data = [
 @pytest.mark.asyncio_cooperative
 @pytest.mark.parametrize("client, data", product(clients, data))
 async def test_classification(client, data):
+    await check_classification(client, data)
+
+
+@unit
+async def check_classification(client, data):
     input, expected = data
     prediction = await client.create(
         response_model=ClassifySpam,
