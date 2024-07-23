@@ -40,7 +40,7 @@ clients = (
     ),
     instructor.from_anthropic(
         AsyncAnthropic(api_key=os.environ.get("ANTHROPIC_API_KEY")),
-        model=Models.CLAUDE3_SONNET,
+        model=Models.CLAUDE35_SONNET,
         max_tokens=4000,
     ),
     instructor.from_anthropic(
