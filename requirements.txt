@@ -22,14 +22,14 @@ huggingface-hub==0.22.2
 idna==3.7
 iniconfig==2.0.0
 inline-snapshot==0.8.0
-instructor==1.2.0
+instructor==1.4.0
 langsmith==0.1.48
 markdown-it-py==3.0.0
 mdurl==0.1.2
 multidict==6.0.5
 mypy-extensions==1.0.0
 numpy==1.26.4
-openai==1.21.2
+openai==1.40.1
 orjson==3.10.1
 packaging==24.0
 pandas==2.2.2
