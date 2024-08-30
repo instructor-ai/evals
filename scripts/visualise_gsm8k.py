@@ -41,7 +41,7 @@ def generate_kde_plot(results: list[dict], visualisation_path: str, sample_size:
         plt.plot(
             x_range,
             kde,
-            label="Correct_Answer" if "correct-answer.json" in file_name else "Answer",
+            label="Correct Answer" if "correct-answer.json" in file_name else "Answer",
         )
     plt.title(f"Kernel Density Estimation for bootstrap sample size {sample_size}")
     plt.xlabel("Accuracy")
@@ -61,7 +61,7 @@ def generate_boxplot(results: list[dict], visualisation_path: str):
     )
     # Create a mapping for the labels
     df["File"] = df["File"].apply(
-        lambda x: "Correct_Answer" if "correct-answer.json" in x else "Answer"
+        lambda x: "Correct Answer" if "correct-answer.json" in x else "Answer"
     )
 
     # Sort the dataframe to ensure consistent ordering
