@@ -22,7 +22,8 @@ huggingface-hub==0.22.2
 idna==3.7
 iniconfig==2.0.0
 inline-snapshot==0.8.0
-instructor==1.4.0
+instructor==1.4.3
+datasets==2.21.0
 langsmith==0.1.48
 markdown-it-py==3.0.0
 mdurl==0.1.2
@@ -60,3 +61,7 @@ typing-extensions==4.11.0
 tzdata==2024.1
 urllib3==2.2.1
 yarl==1.9.4
+boto3==1.35.29
+autoevals==0.0.87
+braintrust==0.0.155
+google-generativeai==0.5.4
